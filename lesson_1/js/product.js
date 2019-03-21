@@ -125,6 +125,6 @@ const renderGoodsItem = item => {
 };
 
 const renderGoodsList = (list) => {
-    let goodsList = list.map(item => renderGoodsItem(item));
+    const goodsList = list.map(item => renderGoodsItem(item));
     document.querySelector('.displayProduct').innerHTML = goodsList.join('');
 }
