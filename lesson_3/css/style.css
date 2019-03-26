@@ -1,0 +1,936 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900");
+@font-face {
+  font-family: SocialIco;
+  src: url("../fonts/Socialico.ttf");
+}
+
+/* line 8, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 13, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+body {
+  font-family: 'Lato', sans-serif;
+  /* margin-left: calc(100vw - 100%);
+    margin-right: 0; */
+}
+
+/* line 19, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.container {
+  width: 1140px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1140px) {
+  /* line 19, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .container {
+    width: auto;
+    margin: auto;
+    padding: 0 15px;
+  }
+}
+
+/* line 30, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.header {
+  border-bottom: 1px solid #ececec;
+}
+
+/* line 34, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutHeader {
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 840px) {
+  /* line 34, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .layoutHeader {
+    height: auto;
+    flex-direction: column;
+    align-content: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  /* line 46, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .layoutHeader div:nth-last-child(n+2) {
+    margin-bottom: 10px;
+  }
+}
+
+/* line 51, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutHeader .logoTittle {
+  display: flex;
+}
+
+/* line 54, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutHeader .logoTittle img[alt="logo"] {
+  width: 59px;
+  height: 51px;
+}
+
+/* line 59, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutHeader .logoTittle .logo {
+  color: #222222;
+  font-size: 27px;
+  font-weight: 300;
+  line-height: 32px;
+  margin: 11px 37px 0 13px;
+}
+
+/* line 66, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutHeader .logoTittle .logo span {
+  color: #f16d7f;
+  font-weight: 900;
+}
+
+/* line 73, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutHeader .searchWrap {
+  height: 38px;
+  display: flex;
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+}
+
+/* line 79, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutHeader .searchWrap .browseBtn {
+  border: none;
+  background: -webkit-linear-gradient(-90deg, #f9f9f9 0%, #f5f5f5 100%);
+  background: -moz-linear-gradient(-90deg, #f9f9f9 0%, #f5f5f5 100%);
+  background: -o-linear-gradient(-90deg, #f9f9f9 0%, #f5f5f5 100%);
+  background: -ms-linear-gradient(-90deg, #f9f9f9 0%, #f5f5f5 100%);
+  background: linear-gradient(180deg, #f9f9f9 0%, #f5f5f5 100%);
+  width: 87px;
+  font-family: 'Lato', sans-serif;
+  color: #222222;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* line 92, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutHeader .searchWrap .browseBtn i {
+  margin: 0 -8px 0 8px;
+  color: #838383;
+  font-size: 14px;
+}
+
+/* line 99, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutHeader .searchWrap input {
+  border: 1px solid #e6e6e6;
+  border-top: none;
+  border-bottom: none;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  width: 279px;
+  padding: 14px 15px;
+  font-family: inherit;
+  color: #a4a4a4;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+@media (max-width: 436px) {
+  /* line 99, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .layoutHeader .searchWrap input {
+    width: calc(100vw - 157px);
+  }
+}
+
+/* line 117, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutHeader .searchWrap .findBtn {
+  border: none;
+  background-color: #ffffff;
+  width: 38px;
+}
+
+/* line 124, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutHeader .account {
+  display: flex;
+  margin-left: auto;
+}
+
+@media (max-width: 840px) {
+  /* line 124, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .layoutHeader .account {
+    margin-left: 0;
+  }
+}
+
+/* line 132, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutHeader .account > img {
+  margin-top: 8px;
+  margin-right: 26px;
+  width: 32px;
+  height: 29px;
+}
+
+/* line 139, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutHeader .account button {
+  background-color: #f16d7f;
+  width: 130px;
+  height: 38px;
+  font-family: inherit;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+/* line 148, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutHeader .account button i {
+  margin: 0 -8px 0 8px;
+  font-size: 14px;
+}
+
+/* line 156, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.topNav {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+}
+
+@media (max-width: 824px) {
+  /* line 156, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .topNav {
+    height: auto;
+  }
+}
+
+/* line 166, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.topNav .menu li {
+  float: left;
+  list-style-type: none;
+}
+
+@media (max-width: 436px) {
+  /* line 166, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .topNav .menu li {
+    float: none;
+  }
+}
+
+/* line 175, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.topNav .menu a {
+  text-decoration: none;
+  display: flex;
+  font-family: 'Lato', sans-serif;
+  color: #222222;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 26px;
+  margin: 10px 18px 0;
+  padding: 5px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 436px) {
+  /* line 175, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .topNav .menu a {
+    margin: 0;
+    justify-content: center;
+  }
+}
+
+/* line 192, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.topNav .menu a:hover {
+  border-bottom: 3px solid #ef5b70;
+}
+
+/* line 199, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.topBanner {
+  height: 390px;
+  background: #e9e9e9 url(../images/bannerBack.jpg) no-repeat center -50px;
+  padding: 225px 0 0;
+}
+
+/* line 204, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.topBanner .topBannerText {
+  padding-left: 25px;
+  border-left: 12px solid #f16d7f;
+}
+
+/* line 208, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.topBanner .topBannerText h1 {
+  color: #222222;
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 48px;
+}
+
+/* line 215, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.topBanner .topBannerText h3 {
+  color: #222222;
+  margin-top: 15px;
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 32px;
+}
+
+/* line 222, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.topBanner .topBannerText h3 span {
+  color: #f16d7f;
+}
+
+/* line 229, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.category {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  height: 823px;
+  padding: 98px 0;
+}
+
+/* line 238, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.category .banner {
+  width: 560px;
+  position: relative;
+}
+
+/* line 242, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.category .banner .badgeCategory {
+  position: absolute;
+  top: 26px;
+  background-color: #ffffff;
+  height: 50px;
+  padding: 16px 19px;
+}
+
+/* line 249, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.category .banner .badgeCategory h5 {
+  color: #222222;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 14px;
+}
+
+/* line 256, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.category .banner .badgeCategory h4 {
+  color: #f16d7f;
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 24px;
+  margin-top: 10px;
+}
+
+/* line 269, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.fetured .textFetured {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  height: 110px;
+}
+
+/* line 274, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.fetured .textFetured h2 {
+  color: #222222;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+/* line 281, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.fetured .textFetured h6 {
+  color: #9f9f9f;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 43px;
+}
+
+/* line 289, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.fetured .wrapFetured {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  grid-column-gap: 32px;
+  grid-row-gap: 39px;
+  height: 767px;
+}
+
+/* line 297, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.fetured .wrapFetured .wrapProduct {
+  position: relative;
+}
+
+/* line 300, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.fetured .wrapFetured .wrapProduct .addProduct {
+  position: absolute;
+  height: 26px;
+  width: 80px;
+  top: 98px;
+  left: 70px;
+  padding: 13px 0 0 43px;
+  font-family: 'Lato', sans-serif;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  background: url(../images/Cart1.png) no-repeat 12px center;
+  border: 1px solid #ffffff;
+  display: none;
+}
+
+/* line 316, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.fetured .wrapFetured .wrapProduct .imgProduct {
+  height: 281px;
+  width: 263px;
+}
+
+/* line 320, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.fetured .wrapFetured .wrapProduct .imgProduct:after {
+  position: absolute;
+  content: '';
+  display: block;
+  height: inherit;
+  width: inherit;
+  top: 0;
+  left: 0;
+}
+
+/* line 331, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.fetured .wrapFetured .wrapProduct .textProduct {
+  padding: 20px 10px 10px 14px;
+  height: 55px;
+}
+
+/* line 335, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.fetured .wrapFetured .wrapProduct .textProduct h6 {
+  color: #222222;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* line 341, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.fetured .wrapFetured .wrapProduct .textProduct p {
+  color: #f16d7f;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 13px;
+}
+
+/* line 349, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.fetured .wrapFetured .wrapProduct:hover .addProduct {
+  display: block;
+  z-index: 100;
+}
+
+/* line 354, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.fetured .wrapFetured .wrapProduct:hover .imgProduct:after {
+  /* background-color: #545251; */
+  background-color: #000;
+  opacity: .66;
+}
+
+/* line 360, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.fetured .wrapFetured .wrapProduct:hover .textProduct {
+  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.16);
+}
+
+/* line 367, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.btnAllProducts {
+  margin: 57px auto 16px;
+  height: 48px;
+  width: 212px;
+  background-color: #f16d7f;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 48px;
+  text-align: center;
+}
+
+/* line 378, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.btnAllProducts a {
+  text-decoration: none;
+  color: #ffffff;
+  display: block;
+}
+
+/* line 384, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.btnAllProducts i {
+  margin-left: 5px;
+  color: #ffffff;
+}
+
+/* line 390, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.offerWrap {
+  padding: 97px 0;
+  height: 529px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+/* line 397, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.offerWrap .bannerOffer {
+  grid-row: 1/-1;
+  position: relative;
+}
+
+/* line 401, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.offerWrap .bannerOffer .textBannerOffer {
+  position: absolute;
+  top: 146px;
+  left: 39px;
+}
+
+/* line 406, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.offerWrap .bannerOffer .textBannerOffer h4 {
+  color: #ffffff;
+  font-size: 53.62px;
+  font-weight: 700;
+  line-height: 43px;
+}
+
+/* line 412, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.offerWrap .bannerOffer .textBannerOffer h4 span {
+  color: #f16d7f;
+}
+
+/* line 417, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.offerWrap .bannerOffer .textBannerOffer h5 {
+  color: #ffffff;
+  font-size: 32.17px;
+  font-weight: 700;
+  line-height: 50px;
+}
+
+/* line 426, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.offerWrap div:nth-child(2) {
+  background: #222224 url(../images/Sign_1.png) no-repeat 32px 47px;
+}
+
+/* line 429, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.offerWrap div:nth-child(2) h5 {
+  margin-top: 50px;
+}
+
+/* line 434, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.offerWrap div:nth-child(3) {
+  background: #222224 url(../images/Sign_2.png) no-repeat 32px 32px;
+}
+
+/* line 438, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.offerWrap div:nth-child(4) {
+  background: #222224 url(../images/Sign_3.png) no-repeat 32px 32px;
+}
+
+/* line 442, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.offerWrap .traitOffer {
+  font-family: 'Lato', sans-serif;
+  background-color: #222224;
+  color: #fbfbfb;
+}
+
+/* line 447, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.offerWrap .traitOffer h5 {
+  margin: 35px 43px 0 114px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* line 453, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.offerWrap .traitOffer p {
+  margin: 10px 43px 0 114px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+/* line 462, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.subscribe {
+  height: 438px;
+  background: rgba(242, 242, 242, 0.5) url(../images/Layer_41.jpg) no-repeat center bottom;
+  background-blend-mode: overlay;
+  display: flex;
+}
+
+@media (max-width: 1140px) {
+  /* line 462, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .subscribe {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    background-size: cover;
+  }
+}
+
+/* line 475, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.subscribe .leftSubscribe {
+  width: calc(50% - 1px);
+}
+
+@media (max-width: 1140px) {
+  /* line 475, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .subscribe .leftSubscribe {
+    width: auto;
+  }
+}
+
+/* line 482, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.subscribe .leftSubscribe .messLeftSub {
+  float: right;
+  margin: 111px 57px 0;
+  padding-left: 111px;
+  width: 386px;
+  background: url(../images/Layer_40.png) no-repeat 0 0;
+}
+
+@media (max-width: 1140px) {
+  /* line 482, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .subscribe .leftSubscribe .messLeftSub {
+    margin: 15px 0 0;
+    float: none;
+  }
+}
+
+@media (max-width: 527px) {
+  /* line 482, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .subscribe .leftSubscribe .messLeftSub {
+    padding: 85px 0 0;
+    background-position: center top;
+  }
+}
+
+@media (max-width: 416px) {
+  /* line 482, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .subscribe .leftSubscribe .messLeftSub {
+    width: calc(100vw - 30px);
+  }
+}
+
+/* line 503, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.subscribe .leftSubscribe .messLeftSub p {
+  color: rgba(34, 34, 36, 0.67);
+  font-size: 16px;
+  font-style: italic;
+  line-height: 26px;
+  padding-top: 7px;
+}
+
+/* line 511, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.subscribe .leftSubscribe .messLeftSub h5 {
+  color: #f16d7f;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+  margin-top: 12px;
+}
+
+/* line 519, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.subscribe .leftSubscribe .messLeftSub h6 {
+  color: #222224;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 10px;
+}
+
+/* line 526, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.subscribe .leftSubscribe .messLeftSub .scroll {
+  margin-top: 40px;
+  height: 4px;
+  display: flex;
+}
+
+/* line 531, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.subscribe .leftSubscribe .messLeftSub .scroll a {
+  display: block;
+  width: 38px;
+  background-color: #d6d6d6;
+}
+
+/* line 536, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.subscribe .leftSubscribe .messLeftSub .scroll a:nth-last-child(n+2) {
+  margin-right: 13px;
+}
+
+/* line 540, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.subscribe .leftSubscribe .messLeftSub .scroll a:nth-child(2) {
+  background-color: #f16d7f;
+}
+
+/* line 548, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.subscribe .sepSubscribe {
+  background-color: #e2e2e2;
+  width: 1px;
+  z-index: 100;
+}
+
+@media (max-width: 1140px) {
+  /* line 548, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .subscribe .sepSubscribe {
+    width: 100vw;
+    height: 1px;
+    margin: 15px 0;
+  }
+}
+
+/* line 560, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.subscribe .rightSubscribe {
+  width: calc(50% - 1px);
+}
+
+@media (max-width: 1140px) {
+  /* line 560, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .subscribe .rightSubscribe {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* line 571, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.subscribe .rightSubscribe .sendRightSub {
+  margin: 148px 0 0 57px;
+  width: 386px;
+}
+
+@media (max-width: 1140px) {
+  /* line 571, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .subscribe .rightSubscribe .sendRightSub {
+    margin: 0 0 15px;
+  }
+}
+
+@media (max-width: 416px) {
+  /* line 571, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .subscribe .rightSubscribe .sendRightSub {
+    width: calc(100vw - 30px);
+  }
+}
+
+/* line 583, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.subscribe .rightSubscribe .sendRightSub h5 {
+  color: rgba(34, 34, 36, 0.67);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 19px;
+  text-align: center;
+}
+
+/* line 591, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.subscribe .rightSubscribe .sendRightSub h6 {
+  color: rgba(34, 34, 36, 0.67);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 42px;
+  text-align: center;
+}
+
+/* line 600, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.subscribe .rightSubscribe .emailWrap {
+  display: flex;
+}
+
+/* line 603, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.subscribe .rightSubscribe .emailWrap input {
+  width: 282px;
+  height: 30px;
+  background-color: #e1e1e1;
+  font-family: inherit;
+  color: rgba(34, 34, 36, 0.67);
+  font-size: 14px;
+  font-weight: 400;
+  border: none;
+  padding: 8px 28px;
+  border-top-left-radius: 23px;
+  border-bottom-left-radius: 23px;
+  outline: none;
+}
+
+@media (max-width: 416px) {
+  /* line 603, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .subscribe .rightSubscribe .emailWrap input {
+    width: calc(80vw - 50.8px);
+  }
+}
+
+/* line 622, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.subscribe .rightSubscribe .emailWrap .btnSendRight {
+  width: 104px;
+  height: 46px;
+  background-color: #f16d7f;
+  font-family: inherit;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  border: none;
+  border-top-right-radius: 23px;
+  border-bottom-right-radius: 23px;
+  outline: none;
+  cursor: pointer;
+}
+
+@media (max-width: 416px) {
+  /* line 622, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .subscribe .rightSubscribe .emailWrap .btnSendRight {
+    width: calc(20vw + 20.8px);
+  }
+}
+
+/* line 644, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutFooter {
+  height: 257px;
+  margin-top: 109px;
+  margin-bottom: 97px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 967px) {
+  /* line 644, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .layoutFooter {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: auto;
+  }
+  /* line 656, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .layoutFooter .divider {
+    width: 100%;
+  }
+}
+
+/* line 661, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutFooter .logoFooter {
+  width: 427px;
+}
+
+/* line 664, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutFooter .logoFooter h2 {
+  color: #3d3d40;
+  font-size: 27px;
+  font-weight: 300;
+  line-height: 32px;
+  background: url(../images/logo.png) no-repeat 0 0;
+  height: 59px;
+  padding: 11px 0 0 71px;
+}
+
+/* line 674, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutFooter .logoFooter span {
+  color: #f16d7f;
+  font-size: 27px;
+  font-weight: 900;
+  line-height: 32px;
+  transform: scaleX(1.003);
+}
+
+/* line 682, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutFooter .logoFooter p {
+  color: #898989;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+/* line 690, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutFooter .divider {
+  display: none;
+}
+
+@media (max-width: 967px) {
+  /* line 690, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .layoutFooter .divider {
+    display: block;
+    width: 100%;
+  }
+}
+
+/* line 699, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutFooter .refFooter {
+  flex-basis: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* line 705, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutFooter .refFooter h2 {
+  padding-top: 11px;
+  padding-bottom: 10px;
+  color: #f16d7f;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+/* line 714, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.layoutFooter .refFooter a {
+  text-decoration: none;
+  color: #898989;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* line 723, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.copyright {
+  background-color: #e6e6e6;
+}
+
+/* line 726, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.copyright .textCopyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 79px;
+}
+
+@media (max-width: 490px) {
+  /* line 726, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .copyright .textCopyright {
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+/* line 737, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.copyright .textCopyright p {
+  color: #7a7a7a;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* line 743, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.copyright .textCopyright .iconCopyright {
+  display: flex;
+}
+
+@media (max-width: 490px) {
+  /* line 743, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+  .copyright .textCopyright .iconCopyright {
+    order: -10;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+}
+
+/* line 752, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.copyright .textCopyright .iconCopyright a {
+  text-decoration: none;
+}
+
+/* line 755, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.copyright .textCopyright .iconCopyright a:nth-child(n+2) {
+  margin-left: 8px;
+}
+
+/* line 759, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.copyright .textCopyright .iconCopyright a:hover > i {
+  background-color: #f16d7f;
+  color: #f7f7f8;
+}
+
+/* line 764, Y:/Продвинутый курс JavaScript/Урок 1/scss/style.scss */
+.copyright .textCopyright .iconCopyright a i {
+  width: 32px;
+  height: 32px;
+  color: #b2b2b2;
+  background-color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=../css/style.map */
