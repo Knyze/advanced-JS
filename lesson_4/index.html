@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/validation.js"></script>
+    <script>
+        const regExp = /\B'/g; //Задание 1 и 2
+        
+        function init() {
+            const $submit = document.querySelector('#submit');
+            $submit.addEventListener('click', hundleSubmitClick);
+        }
+        window.addEventListener('load', init);
+    </script>
+</head>
+
+<body>
+    <form>
+        <h3>Форма обратной связи:</h3>
+        <input id="name" type="text" placeholder="Имя" autocomplete="name">
+        <input id="tel" type="tel" placeholder="Телефон: +7(000)000-0000" autocomplete="tel">
+        <input id="email" type="email" placeholder="e-mail" autocomplete="email">
+        <textarea name="" id="" rows="10" ></textarea>
+        <input id="submit" type="submit">
+        <h4 class="report"></h4>
+    </form>
+
+</body>
+
+</html>
