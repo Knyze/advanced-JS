@@ -1,0 +1,16 @@
+form {
+    margin: 0 auto;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    textarea {
+        resize: none;
+    }
+
+    .redoutline {
+        outline: 1px solid red;
+    }
+}
