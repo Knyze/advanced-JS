@@ -201,8 +201,8 @@
                     </div>
                 </div>
 
-                <div class="displayProduct" @click="hundleShopClick">
-                    <div class="wrapProduct" v-for="item in catalog" v-bind:data-vendor_code="item.vendorCode">
+                <div class="displayProduct">
+                    <div class="wrapProduct" v-for="item in catalog" v-bind:data-vendor_code="item.vendorCode" @click="hundleShopClick(item)">
                         <div class="addProduct">
                             Add to Cart
                         </div>

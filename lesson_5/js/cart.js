@@ -1,15 +1,14 @@
+const API_URL = 'http://localhost:3000';
+
 const mainVue = new Vue({
     el: '#main',
     data: {
         cart: [],
     },
     mounted() {
-        fetch('http://localhost:3000/cart')
+        fetch(`${API_URL}/cart`)
             .then((response) => response.json())
             .then((items) => {
-                items.map((item) => {
-                    item.count = 1;
-                })
                 this.cart = items;
             });
     },
@@ -19,29 +18,30 @@ const mainVue = new Vue({
         },
 
         totalCart() {
-            let total = 0;
-            for (let i = 0; i < this.cart.length; i++)
-                total +=this.cart[i].count * this.cart[i].price;
-            return total;
+            return this.cart.reduce((acc, item) => acc+= item.count * item.price, 0);
         }
 
     },
     methods: {
-        getIndexProductInCart(id) {
-            for (let i = 0; i < this.cart.length; i++) {
-                if (this.cart[i].id === id) {
-                    return i;
-                }
-            }
-            return -1;
-        },
-
         handleClickDelete(event) {
-            const itemId = +event.target.dataset.id;
-            fetch(`http://localhost:3000/cart/${itemId}`, {
+            const itemId = event.target.dataset.id;
+            fetch(`${API_URL}/cart/${itemId}`, {
                 method: 'DELETE',
             }).then(() => {
-                this.cart.splice(this.getIndexProductInCart(itemId), 1);
+                this.cart.splice(this.cart.findIndex((item) => item.id === itemId), 1);
+            });
+        },
+        
+        handleChangeInput(itemCart) {
+            const vendorCode = itemCart.id;
+            fetch(`${API_URL}/cart/${vendorCode}`, {
+                method: 'PATCH',
+                headers: {'Content-Type': 'application/json',},
+                body: JSON.stringify({count: +itemCart.count}),
+            }).then((response) => response.json())
+              .then((updated) => {
+                    const itemCartIdx = this.cart.findIndex((item) => item.id === vendorCode);
+                    this.cart[itemCartIdx].count = updated.count;
             });
         },
     }

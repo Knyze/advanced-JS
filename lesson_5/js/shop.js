@@ -1,3 +1,5 @@
+const API_URL = 'http://localhost:3000';
+
 const mainVue = new Vue({
     el: '#main',
     data: {
@@ -5,12 +7,12 @@ const mainVue = new Vue({
         cart: [],
     },
     mounted() {
-        fetch('http://localhost:3000/catalog.json')
+        fetch(`${API_URL}/catalog`)
             .then((response) => response.json())
             .then((items) => {
                 this.catalog = items;
             });
-        fetch('http://localhost:3000/cart')
+        fetch(`${API_URL}/cart`)
             .then((response) => response.json())
             .then((items) => {
                 this.cart = items;
@@ -20,43 +22,33 @@ const mainVue = new Vue({
 
     },
     methods: {
-        getProductInCatalogByVendorCode(vendorCode) {
-            for (var i = 0; i < this.catalog.length; i++)
-                if (this.catalog[i].vendorCode === vendorCode)
-                    return this.catalog[i];
-        },
+        hundleShopClick(itemClicked) {
+            fetch(`${API_URL}/cart`)
+                .then((response) => response.json())
+                .then((items) => {
+                    this.cart = items;
+                    const vendorCode = itemClicked.id;
+                    const itemCartIdx = this.cart.findIndex((item) => item.id === vendorCode);
 
-        getIndexProductInCartByVendorCode(Code) {
-            for (let i = 0; i < this.cart.length; i++) {
-                if (this.cart[i].vendorCode === Code) {
-                    return i;
-                }
-            }
-            return -1;
-        },
+                    if (itemCartIdx !== -1) {
+                        fetch(`${API_URL}/cart/${vendorCode}`, {
+                            method: 'PATCH',
+                            headers: {'Content-Type': 'application/json',},
+                            body: JSON.stringify({count: (this.cart[itemCartIdx].count + 1)}),
+                        }).then((response) => response.json())
+                          .then((updated) => this.cart[itemCartIdx].count = updated.count);
+                    } else {
+                        const item = this.catalog.find((item) => item.id === vendorCode);
+                        fetch(`${API_URL}/cart`, {
+                                method: 'POST',
+                                headers: {'Content-Type': 'application/json',},
+                                body: JSON.stringify({ ...item, count: 1}),
+                            }).then((response) => response.json())
+                              .then((created) => this.cart.push(created));
+                    };
+                });
+        }
 
-        hundleShopClick(event) {
-            if (event.target.offsetParent.className !== 'wrapProduct')
-                return;
-            const vendorCode = event.target.offsetParent.dataset.vendor_code;
-            
-            const indexProductInCart = this.getIndexProductInCartByVendorCode(vendorCode);
-
-            if (indexProductInCart !== -1) {
-                alert('Товар уже добавлен в корзину');
-                return;
-            }
-
-            const item = this.getProductInCatalogByVendorCode(vendorCode);
-            fetch('http://localhost:3000/cart', {
-                method: 'POST',
-                body: JSON.stringify(item),
-                headers: {
-                    'Content-Type': 'application/json',
-                }
-            }).then(() => {
-                this.cart.push(item);
-            });
-        },
     }
+
 });

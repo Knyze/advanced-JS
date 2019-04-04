@@ -83,7 +83,7 @@
                     </div>
                 </div>
                 <div>${{ item.price }}</div>
-                <div><input type="number" v-model="item.count"></div>
+                <div><input type="number" v-model="item.count" @change="handleChangeInput(item)"></div>
                 <div>FREE</div>
                 <div>$<output name="result">{{item.count * item.price}}</output></div>
                 <div>
