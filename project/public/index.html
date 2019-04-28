@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Brand</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="layoutHeader container">
+                <div class="logoTittle">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="logo">
+                    </a>
+                    <div class="logo">
+                        BRAN<span>D</span>
+                    </div>
+                </div>
+
+                <div class="searchWrap">
+                    <button class="browseBtn">
+                        Browse <i class="fas fa-caret-down"></i>
+                    </button>
+                    <input type="text" placeholder="Search for item...">
+                    <button class="findBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <account-component :logged_in="loggedIn">
+                </account-component>
+
+            </div>
+        </header>
+
+        <nav class="topNav container">
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="product.html">Men</a></li>
+                <li><a href="product.html">Women</a></li>
+                <li><a href="product.html">Kids</a></li>
+                <li><a href="product.html">Accoseriese</a></li>
+                <li><a href="product.html">Featured</a></li>
+                <li><a href="product.html">Hot Deals</a></li>
+            </ul>
+        </nav>
+
+        <div class="topBanner">
+            <div class="topBannerText container">
+                <h1>THE BRAND</h1>
+                <h3>OF LUXERIOUS <span>FASHION</span></h3>
+            </div>
+        </div>
+
+        <main>
+            <div class="category container">
+                <div class="banner">
+                    <div class="badgeCategory">
+                        <h5>HOT DEAL</h5>
+                        <h4>FOR MEN</h4>
+                    </div>
+                    <img src="images/Layer_30.jpg" alt="Layer_30">
+                </div>
+                <div class="banner">
+                    <div class="badgeCategory">
+                        <h5>LUXIROUS &amp;&nbsp;TRENDY</h5>
+                        <h4>ACCESORIES</h4>
+                    </div>
+                    <img src="images/Layer_37.jpg" alt="Layer_37">
+                </div>
+                <div class="banner">
+                    <div class="badgeCategory">
+                        <h5>30% OFFER</h5>
+                        <h4>WOMEN</h4>
+                    </div>
+                    <img src="images/Layer_32.jpg" alt="Layer_32">
+                </div>
+                <div class="banner">
+                    <div class="badgeCategory">
+                        <h5>NEW ARRIVALS</h5>
+                        <h4>FOR KIDS</h4>
+                    </div>
+                    <img src="images/Layer_31.jpg" alt="Layer_31">
+                </div>
+            </div>
+
+            <div class="fetured container">
+                <div class="textFetured">
+                    <h2>Fetured Items</h2>
+                    <h6>Shop for items based on what we featured in this week</h6>
+                </div>
+                <div class="wrapFetured">
+                    <div class="wrapProduct">
+                        <div class="addProduct">
+                            Add to Cart
+                        </div>
+                        <div class="imgProduct">
+                            <img src="images/product/product10.jpg" alt="Layer_2">
+                        </div>
+                        <div class="textProduct">
+                            <h6>Mango People T-shirt</h6>
+                            <p>$52.00</p>
+                        </div>
+                    </div>
+                    <div class="wrapProduct">
+                        <div class="addProduct">
+                            Add to Cart
+                        </div>
+                        <div class="imgProduct">
+                            <img src="images/product/product102.jpg" alt="Layer_3">
+                        </div>
+                        <div class="textProduct">
+                            <h6>Mango People T-shirt</h6>
+                            <p>$52.00</p>
+                        </div>
+                    </div>
+                    <div class="wrapProduct">
+                        <div class="addProduct">
+                            Add to Cart
+                        </div>
+                        <div class="imgProduct">
+                            <img src="images/product/product3.jpg" alt="Layer_4">
+                        </div>
+                        <div class="textProduct">
+                            <h6>Mango People T-shirt</h6>
+                            <p>$52.00</p>
+                        </div>
+                    </div>
+                    <div class="wrapProduct">
+                        <div class="addProduct">
+                            Add to Cart
+                        </div>
+                        <div class="imgProduct">
+                            <img src="images/product/product103.jpg" alt="Layer_5">
+                        </div>
+                        <div class="textProduct">
+                            <h6>Mango People T-shirt</h6>
+                            <p>$52.00</p>
+                        </div>
+                    </div>
+                    <div class="wrapProduct">
+                        <div class="addProduct">
+                            Add to Cart
+                        </div>
+                        <div class="imgProduct">
+                            <img src="images/product/product101.jpg" alt="Layer_6">
+                        </div>
+                        <div class="textProduct">
+                            <h6>Mango People T-shirt</h6>
+                            <p>$52.00</p>
+                        </div>
+                    </div>
+                    <div class="wrapProduct">
+                        <div class="addProduct">
+                            Add to Cart
+                        </div>
+                        <div class="imgProduct">
+                            <img src="images/product/product7.jpg" alt="Layer_7">
+                        </div>
+                        <div class="textProduct">
+                            <h6>Mango People T-shirt</h6>
+                            <p>$52.00</p>
+                        </div>
+                    </div>
+                    <div class="wrapProduct">
+                        <div class="addProduct">
+                            Add to Cart
+                        </div>
+                        <div class="imgProduct">
+                            <img src="images/product/product11.jpg" alt="Layer_8">
+                        </div>
+                        <div class="textProduct">
+                            <h6>Mango People T-shirt</h6>
+                            <p>$52.00</p>
+                        </div>
+                    </div>
+                    <div class="wrapProduct">
+                        <div class="addProduct">
+                            Add to Cart
+                        </div>
+                        <div class="imgProduct">
+                            <img src="images/product/product5.jpg" alt="Layer_9">
+                        </div>
+                        <div class="textProduct">
+                            <h6>Mango People T-shirt</h6>
+                            <p>$52.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btnAllProducts">
+                <a href="#">
+                    Browse All Product <i class="fas fa-long-arrow-alt-right"></i>
+                </a>
+            </div>
+
+            <div class="offerWrap container">
+                <div class="bannerOffer">
+                    <div class="textBannerOffer">
+                        <h4>30% <span>OFFER</span></h4>
+                        <h5>FOR WOMEN</h5>
+                    </div>
+                    <img src="images/Layer_38.jpg" alt="Layer_38">
+                </div>
+                <div class="traitOffer firstTraitOffer">
+                    <h5>Free Delivery</h5>
+                    <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+                </div>
+                <div class="traitOffer">
+                    <h5>Sales &amp;&nbsp;discounts</h5>
+                    <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+                </div>
+                <div class="traitOffer">
+                    <h5>Quality assurance</h5>
+                    <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="subscribe">
+                <div class="leftSubscribe">
+                    <feedback-component></feedback-component>
+                </div>
+
+                <div class="sepSubscribe"></div>
+
+                <div class="rightSubscribe">
+                    <div class="sendRightSub">
+                        <h5>SUBSCRIBE</h5>
+                        <h6>FOR OUR NEWLETTER AND PROMOTION</h6>
+                        <div class="emailWrap">
+                            <input type="email" placeholder="Enter Your Email">
+                            <button class="btnSendRight">
+                                Subscribe
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layoutFooter container">
+                <section class="logoFooter">
+                    <h2>BRAN<span>D</span></h2>
+                    <p>
+                        Objectively transition extensive data rather than cross functional solutions. Monotonectally syndicate multidisciplinary materials before go&nbsp;forward benefits. Intrinsicly syndicate an&nbsp;expanded array of&nbsp;processes and cross-unit partnerships.
+                        <br><br>
+                        Efficiently plagiarize 24/365 action items and focused infomediaries.
+                        Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.
+                    </p>
+                </section>
+                <div class="divider"></div>
+                <section class="refFooter">
+                    <h2>COMPANY</h2>
+                    <a href="#">Home</a>
+                    <a href="#">Shop</a>
+                    <a href="#">About</a>
+                    <a href="#">How It Works</a>
+                    <a href="#">Contact</a>
+                </section>
+                <section class="refFooter">
+                    <h2>INFORMATION</h2>
+                    <a href="#">Tearms &amp;&nbsp;Condition</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">How to Buy</a>
+                    <a href="#">How to Sell</a>
+                    <a href="#">Promotion</a>
+                </section>
+                <section class="refFooter">
+                    <h2>SHOP CATEGORY</h2>
+                    <a href="#">Men</a>
+                    <a href="#">Women</a>
+                    <a href="#">Child</a>
+                    <a href="#">Apparel</a>
+                    <a href="#">Brows All</a>
+                </section>
+            </div>
+        </footer>
+
+        <div class="copyright">
+            <div class="textCopyright container">
+                <p>&copy;&nbsp;2017 Brand All Rights Reserved.</p>
+                <div class="iconCopyright">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+    <script src="js/shop.js"></script>
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>

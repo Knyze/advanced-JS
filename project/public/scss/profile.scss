@@ -1,0 +1,190 @@
+main {
+    margin-top: 50px;
+    margin-bottom: 93px;
+}
+
+.profileWrap {
+    padding: 30px 0;
+    border-bottom: 1px solid #e8e8e8;
+
+    summary {
+        color: #222222;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+    }
+
+    .personalData {
+        padding: 35px 35px 0;
+
+        .personalWrap {
+            display: flex;
+            justify-content: space-between;
+
+            h5 {
+                color: #222222;
+                font-size: 12px;
+                font-weight: 400;
+            }
+
+            input {
+                box-sizing: border-box;
+                background-color: #ffffff;
+                width: 300px;
+                height: 45px;
+                border: 1px solid #eaeaea;
+                padding: 0 15px;
+                font-family: inherit;
+                color: #222222;
+                font-size: 12px;
+                font-weight: 400;
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+            
+            .wrongfield {
+                outline: 1px solid red;
+            }
+        }
+
+        input[name="gender"] {
+            display: none;
+
+            &:checked + label {
+                background: url(../images/Radio.png) no-repeat 0 center, url(../images/Radio_check.png) no-repeat 4px center;
+                background-blend-mode: multiply;
+            }
+        }
+
+        label {
+            padding-left: 27px;
+            padding-right: 28px;
+            color: #222222;
+            font-size: 12px;
+            font-weight: 400;
+            background: url(../images/Radio.png) no-repeat 0 center;
+            cursor: pointer;
+        }
+
+        input[type="submit"] {
+            box-sizing: border-box;
+            background-color: #ffffff;
+            width: 180px;
+            height: 50px;
+            border: 1px solid #eaeaea;
+            font-family: inherit;
+            color: #4a4a4a;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 40px;
+        }
+    }
+
+    .feedBack {
+        padding: 35px 35px 0;
+
+        & > div {
+            width: 400px;
+            padding: 5px;
+            border-radius: 15px;
+            border: 2px solid #e8e8e8;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+
+            textarea {
+                resize: none;
+                outline: none;
+                width: 100%;
+                border: none;
+                font-family: inherit;
+                color: #6f6e6e;
+                font-size: 14px;
+                font-weight: 400;
+            }
+        }
+
+        input[type="submit"] {
+            box-sizing: border-box;
+            background-color: #ffffff;
+            width: 180px;
+            height: 50px;
+            border: 1px solid #eaeaea;
+            font-family: inherit;
+            color: #4a4a4a;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        button {
+            box-sizing: border-box;
+            background-color: #ffffff;
+            width: 180px;
+            height: 50px;
+            border: 1px solid #eaeaea;
+            margin-left: 35px;
+            font-family: inherit;
+            color: #4a4a4a;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+    }
+
+    .disapprovedComments {
+        padding: 35px 35px 0;
+        display: flex;
+
+        .commentWrap {
+            width: 400px;
+            padding: 5px;
+            border-radius: 15px;
+            border: 2px solid #e8e8e8;
+            box-sizing: border-box;
+
+            textarea {
+                resize: none;
+                outline: none;
+                width: 100%;
+                border: none;
+                font-family: inherit;
+                color: #6f6e6e;
+                font-size: 14px;
+                font-weight: 400;
+            }
+        }
+
+        .buttonsWrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            
+            button {
+                box-sizing: border-box;
+                background-color: #ffffff;
+                width: 180px;
+                height: 50px;
+                border: 1px solid #eaeaea;
+                margin-left: 35px;
+                font-family: inherit;
+                color: #4a4a4a;
+                font-size: 14px;
+                font-weight: 700;
+                cursor: pointer;
+            }
+            
+            button:first-child:hover {
+                background-color: #3df13a;
+            }
+            
+            button:last-child:hover {
+                background-color: #f13d3a;
+            }
+        }
+    }
+}

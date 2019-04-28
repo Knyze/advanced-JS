@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Brand</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body>
+    <div id="app">
+
+        <header class="header">
+            <div class="layoutHeader container">
+                <div class="logoTittle">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="logo">
+                    </a>
+                    <div class="logo">
+                        BRAN<span>D</span>
+                    </div>
+                </div>
+
+                <div class="searchWrap">
+                    <button class="browseBtn">
+                        Browse <i class="fas fa-caret-down"></i>
+                    </button>
+                    <input type="text" placeholder="Search for item...">
+                    <button class="findBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <account-component :logged_in="loggedIn"></account-component>
+
+            </div>
+        </header>
+
+        <nav class="topNav container">
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Men</a></li>
+                <li><a href="product.html">Women</a></li>
+                <li><a href="product.html">Kids</a></li>
+                <li><a href="product.html">Accoseriese</a></li>
+                <li><a href="product.html">Featured</a></li>
+                <li><a href="product.html">Hot Deals</a></li>
+            </ul>
+        </nav>
+
+        <nav class="breadCrumbNav">
+            <div class="breadCrumb container">
+                <h1>NEW ARRIVALS</h1>
+                <div>
+                    <a href="index.html">HOME</a>/
+                    <a href="#">MEN</a>/
+                    <a href="#"><span>NEW ARRIVALS</span></a>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <div v-if="loggedIn" class="container">
+                <details :open="openDetails === 1" class="profileWrap">
+                    <summary>PERSONAL DATA</summary>
+                    <form class="personalData">
+                        <div class="personalWrap">
+                            <div>
+                                <h5>NAME</h5>
+                                <input type="text" v-model="user.name"
+                                    :class="{wrongfield: isWrongField.user}">
+                                <h5>LASTNAME</h5>
+                                <input type="text" v-model="user.lastName"
+                                    :class="{wrongfield: isWrongField.lastName}">
+                            </div>
+                            <div>
+                                <h5>PHONE</h5>
+                                <input type="text" v-model="user.phone"
+                                    :class="{wrongfield: isWrongField.phone}">
+                                <h5>CREDIT CARD</h5>
+                                <input type="text" v-model="user.creditCard"
+                                    :class="{wrongfield: isWrongField.creditCard}">
+                            </div>
+                            <div>
+                                <h5>EMAIL</h5>
+                                <input type="email" v-model="user.email"
+                                    :class="{wrongfield: isWrongField.email}">
+                                <h5>PASSWORD</h5>
+                                <input type="password" v-model="user.password">
+                            </div>
+                        </div>
+                        <div>
+                            <input v-model="user.gender" id="genderNot" type="radio" name="gender" value="not">
+                            <label for="genderNot">NOT CHOSEN</label>
+                            <input v-model="user.gender" id="genderMale" type="radio" name="gender" value="male">
+                            <label for="genderMale">MALE</label>
+                            <input v-model="user.gender" id="genderFemale" type="radio" name="gender" value="female">
+                            <label for="genderFemale">FEMALE</label>
+                        </div>
+                        <input type="submit" value="SAVE CHANGES" @click.prevent="handleSaveChange">
+                    </form>
+                </details>
+                
+                <details :open="openDetails === 2" class="profileWrap">
+                    <summary>FEEDBACK</summary>
+                    <form class="feedBack">
+                        <div>
+                            <textarea name="" id="" rows="10"
+                            placeholder="Здесь вы можете оставить свой отзыв" v-model="message"></textarea>
+                        </div>
+                        <input type="submit" value="SEND" @click.prevent="handleClickSend">
+                        <button @click.prevent="handleClickDelete">DELETE</button>
+                    </form>
+                </details>
+                
+                <details class="profileWrap" v-if="moderator">
+                    <summary>DISAPPROVED COMMENTS</summary>
+                    <div v-for="item in comments" class="disapprovedComments">
+                        <div class="commentWrap">
+                            <textarea v-model="item" name="" id="" rows="10"
+                            placeholder="Здесь вы можете оставить свой отзыв" readonly></textarea>
+                        </div>
+                        <div class="buttonsWrap">
+                            <button @click.prevent="handleClickApprove(item,'APPROVE')">APPROVE</button>
+                            <button @click.prevent="handleClickApprove(item,'DELETE')">DELETE</button>
+                        </div>
+                    </div>
+                </details>
+
+            </div>
+        </main>
+
+        <div class="copyright">
+            <div class="textCopyright container">
+                <p>&copy;&nbsp;2017 Brand All Rights Reserved.</p>
+                <div class="iconCopyright">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+    <script src="js/shop.js"></script>
+    <script src="js/profile.js"></script>
+
+</body>
+
+</html>
