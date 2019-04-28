@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Brand</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/registration.css">
+</head>
+
+<body>
+    <div id="app" class="registWrap">
+
+        <div class="logoTittle">
+            <a href="index.html">
+                <img src="images/logo.png" alt="logo">
+            </a>
+            <div class="logo">
+                BRAN<span>D</span>
+            </div>
+        </div>
+
+        <main>
+
+            <reg-component :user_form="user_form[user_form_active]" :error_msg="errorMsg"
+            @on_login="handleSubmitClick" @onchange_form="handleChangeFormClick"></reg-component>
+
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+    <script src="js/shop.js"></script>
+    <script src="js/registration.js"></script>
+</body>
+
+</html>

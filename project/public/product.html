@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Brand</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product.css">
+</head>
+
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="layoutHeader container">
+                <div class="logoTittle">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="logo">
+                    </a>
+                    <div class="logo">
+                        BRAN<span>D</span>
+                    </div>
+                </div>
+                <search-wrap :search_query="searchQuery" @on_search="handleFindClick"></search-wrap>
+                <account-component :logged_in="loggedIn"></account-component>
+            </div>
+        </header>
+
+        <nav class="topNav container">
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Kids</a></li>
+                <li><a href="#">Accoseriese</a></li>
+                <li><a href="#">Featured</a></li>
+                <li><a href="#">Hot Deals</a></li>
+            </ul>
+        </nav>
+
+        <nav class="breadCrumbNav">
+            <div class="breadCrumb container">
+                <h1>NEW ARRIVALS</h1>
+                <div>
+                    <a href="index.html">HOME</a>/
+                    <a href="#">MEN</a>/
+                    <a href="#"><span>NEW ARRIVALS</span></a>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <div class="mainWrap container">
+                <div class="sideBar">
+                    <details open>
+                        <summary>CATEGORY</summary>
+                        <div class="categoryProduct">
+                            <div class="kindCategory">Accessories</div>
+                            <div class="kindCategory">Bags</div>
+                            <div class="kindCategory">Denim</div>
+                            <div class="kindCategory">Hoodies &amp;&nbsp;Sweatshirts</div>
+                            <div class="kindCategory">Jackets &amp;&nbsp;Coats</div>
+                            <div class="kindCategory">Pants</div>
+                            <div class="kindCategory">Polos</div>
+                            <div class="kindCategory">Shirts</div>
+                            <div class="kindCategory">Shoes</div>
+                            <div class="kindCategory">Shorts</div>
+                            <div class="kindCategory">Sweaters &amp;&nbsp;Knits</div>
+                            <div class="kindCategory">T-Shirts</div>
+                            <div class="kindCategory">Tanks</div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>BRAND</summary>
+                        <div class="categoryProduct">
+                            <div class="kindCategory">Mango</div>
+                            <div class="kindCategory">Mungo</div>
+                            <div class="kindCategory">Mingo</div>
+                            <div class="kindCategory">Mengo</div>
+                            <div class="kindCategory">Mongo</div>
+                            <div class="kindCategory">Myngo</div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>DESIGNER</summary>
+                        <div class="categoryProduct">
+                            <div class="kindCategory">Black</div>
+                            <div class="kindCategory">White</div>
+                            <div class="kindCategory">Blue</div>
+                            <div class="kindCategory">Red</div>
+                            <div class="kindCategory">Yellow</div>
+                            <div class="kindCategory">Green</div>
+                            <div class="kindCategory">Purple</div>
+                            <div class="kindCategory">Orange</div>
+                        </div>
+                    </details>
+                </div>
+
+                <form class=productWrap>
+                    <div class="topFilter">
+                        <section>
+                            <h5>TRENDING NOW</h5>
+                            <div class="trendingNow">
+                                <span class="trend">Bohemian</span>
+                                <span class="divider">|</span>
+                                <span class="trend">Floral</span>
+                                <span class="divider">|</span>
+                                <span class="trend">Lace</span>
+                                <span class="trend">Floral</span>
+                                <span class="divider">|</span>
+                                <span class="trend">Lace</span>
+                                <span class="divider">|</span>
+                                <span class="trend">Bohemian</span>
+                            </div>
+                        </section>
+                        <section>
+                            <h5>SIZE</h5>
+                            <div class="size">
+                                <div>
+                                    <input v-model="filterProduct.size.sizeXXS" type="checkbox" id="xxs">
+                                    <label for="xxs">XXS</label>
+                                </div>
+                                <div>
+                                    <input v-model="filterProduct.size.sizeXS" type="checkbox" id="xs">
+                                    <label for="xs">XS</label>
+                                </div>
+                                <div>
+                                    <input v-model="filterProduct.size.sizeS" type="checkbox" id="s">
+                                    <label for="s">S</label>
+                                </div>
+                                <div>
+                                    <input v-model="filterProduct.size.sizeM" type="checkbox" id="m">
+                                    <label for="m">M</label>
+                                </div>
+                                <div>
+                                    <input v-model="filterProduct.size.sizeL" type="checkbox" id="l">
+                                    <label for="l">L</label>
+                                </div>
+                                <div>
+                                    <input v-model="filterProduct.size.sizeXL" type="checkbox" id="xl">
+                                    <label for="xl">XL</label>
+                                </div>
+                                <div>
+                                    <input v-model="filterProduct.size.sizeXXL" type="checkbox" id="xxl">
+                                    <label for="xxl">XXL</label>
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <h5>PRICE</h5>
+                            <img src="images/priceRange.svg" alt="">
+                            <div class="price">
+                                <p>$52</p>
+                                <p>$400</p>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="sorting">
+                        <div class="sortBy">
+                            <label>Sort By</label>
+                            <select v-model="sortProduct">
+                                <option selected value="Name">Name</option>
+                                <option value="Price">Price</option>
+                                <option value="Size">Size</option>
+                            </select>
+                        </div>
+                        <div class="showBy">
+                            <label>Show</label>
+                            <select v-model="showProduct">
+                                <option value="03">03</option>
+                                <option selected value="09">09</option>
+                                <option value="15">15</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="displayProduct">
+                        <div class="wrapProduct" v-for="item in filteredItems" :data-vendor_code="item.vendorCode" @click="handleShopClick(item)">
+                            <div class="addProduct">
+                                Add to Cart
+                            </div>
+                            <div class="imgProduct">
+                                <img :src="item.imgSrc" :alt="item.vendorCode">
+                            </div>
+                            <div class="textProduct">
+                                <h6>{{ item.name }}</h6>
+                                <p>${{ item.price.toFixed(2) }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <pagination :pages="totalPages" :current_page="pageProduct" 
+                        @on_click_page="handleClickPage">
+                    </pagination>
+                    
+                </form>
+            </div>
+        </main>
+
+        <div class="featureBox">
+            <div class="featureWrap container">
+                <section>
+                    <img src="images/Sign_1.png" alt="Sign_1">
+                    <h5>Free Delivery</h5>
+                    <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+                </section>
+                <section>
+                    <img src="images/Sign_2.png" alt="Sign_2">
+                    <h5>Sales &amp;&nbsp;discounts</h5>
+                    <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+                </section>
+                <section>
+                    <img src="images/Sign_3.png" alt="Sign_3">
+                    <h5>Quality assurance</h5>
+                    <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+                </section>
+            </div>
+        </div>
+
+        <footer>
+            <div class="subscribe">
+                <div class="leftSubscribe">
+                    <feedback-component></feedback-component>
+                </div>
+
+                <div class="sepSubscribe"></div>
+
+                <div class="rightSubscribe">
+                    <div class="sendRightSub">
+                        <h5>SUBSCRIBE</h5>
+                        <h6>FOR OUR NEWLETTER AND PROMOTION</h6>
+                        <form class="emailWrap">
+                            <input type="email" placeholder="Enter Your Email" required>
+                            <button class="btnSendRight">
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layoutFooter container">
+                <section class="logoFooter">
+                    <h2>BRAN<span>D</span></h2>
+                    <p>
+                        Objectively transition extensive data rather than cross functional solutions. Monotonectally syndicate multidisciplinary materials before go&nbsp;forward benefits. Intrinsicly syndicate an&nbsp;expanded array of&nbsp;processes and cross-unit partnerships.
+                        <br><br>
+                        Efficiently plagiarize 24/365 action items and focused infomediaries.
+                        Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.
+                    </p>
+                </section>
+                <div class="divider"></div>
+                <section class="refFooter">
+                    <h2>COMPANY</h2>
+                    <a href="#">Home</a>
+                    <a href="#">Shop</a>
+                    <a href="#">About</a>
+                    <a href="#">How It Works</a>
+                    <a href="#">Contact</a>
+                </section>
+                <section class="refFooter">
+                    <h2>INFORMATION</h2>
+                    <a href="#">Tearms &amp;&nbsp;Condition</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">How to Buy</a>
+                    <a href="#">How to Sell</a>
+                    <a href="#">Promotion</a>
+                </section>
+                <section class="refFooter">
+                    <h2>SHOP CATEGORY</h2>
+                    <a href="#">Men</a>
+                    <a href="#">Women</a>
+                    <a href="#">Child</a>
+                    <a href="#">Apparel</a>
+                    <a href="#">Brows All</a>
+                </section>
+            </div>
+        </footer>
+
+        <div class="copyright">
+            <div class="textCopyright container">
+                <p>&copy;&nbsp;2017 Brand All Rights Reserved.</p>
+                <div class="iconCopyright">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+    <script src="js/shop.js"></script>
+    <script src="js/product.js"></script>
+
+</body>
+
+</html>
